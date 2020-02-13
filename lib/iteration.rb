@@ -30,37 +30,53 @@ end
 
 
 def find_greater_pair(src)
-  # src will be an array of [ [number1, number2], ... [numberN, numberM] ]
-  # Produce a new Array that contains the larger number of each of the pairs
-  # that are in the inner Arrays
+  
   
   outer_array = []
-  row_index = 0 
-  while row_index < src.length do
+ 
     element_index = 0 
-    while element_index < src[row_index].length do
-if src[row_index][element_index] > src[row_index][element_index+1]
-  outer_array << src[row_index][element_index]
-else outer_array << src[row_index][element_index+1]
+     while element_index < src.length do
+  outer_array <<  (src[element_index][0] > src[element_index][1] ? src[element_index][0] : src[element_index][1])
 
-end
-      element_index +=1 
-     
-  end
+#end
 
-   row_index+=1 
+  element_index+=1 
  
   
 end
 
 outer_array
 
+
 end
 
 
 
-
 def total_even_pairs(src)
+  total = []
+  element_index = 0
+  while element_index < src.length do
+   if src[element_index][0] % 2 === 0 && src[element_index][1] % 2 === 0
+   total.push src[element_index][0] + src[element_index][1]
+
+
+end
+
+element_index+=1 
+
+end
+total.sum
+
+
+end
+
+
+
+ 
+ 
+  #outer_array <<  (src[element_index][0]  src[element_index][1] ? src[element_index][0] : src[element_index][1])
+  
+  
   # src will be an array of [ [number1, number2], ... [numberN, numberM] ]
   # if both numbers in the pair are even, then add both those numbers to the
   # total
@@ -70,3 +86,5 @@ def total_even_pairs(src)
   # this!
   
   
+  
+
